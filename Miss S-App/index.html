@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>专业光源控制器</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="breathing-hint" id="breathingHint"></div>
+    <div class="ambient-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <button class="fullscreen-btn" id="fullscreenBtn">
+        <span class="material-symbols-rounded">fullscreen</span>
+    </button>
+
+    <button class="menu-button" id="menuButton">
+        <span class="menu-icon"></span>
+    </button>
+
+    <div class="current-status">
+        <div class="status-item brightness-status">
+            <span id="brightnessValue">50%</span>
+            <small>亮度</small>
+        </div>
+        <div class="status-item temp-status">
+            <span id="tempValue">4000K</span>
+            <small>色温</small>
+        </div>
+    </div>
+
+    <div class="controls" id="controls">
+        <div class="controls-header">
+            <h2>
+                <span class="brand-name">Miss</span>
+                <span class="title-separator">·</span>
+                <span class="brand-letter">S</span>
+                <span class="title-separator">·</span>
+                <span class="brand-suffix">MAKEUP LIGHT</span>
+            </h2>
+            <div class="mode-indicator">PROFESSIONAL</div>
+        </div>
+
+        <div class="control-group">
+            <label>
+                <span class="label-text">
+                    <span class="material-symbols-rounded">brightness_6</span>
+                    亮度控制
+                </span>
+                <span class="value-display"></span>
+            </label>
+            <input type="range" id="brightness" min="0" max="200" value="100">
+            <div class="slider-ticks">
+                <span>0%</span>
+                <span>100%</span>
+                <span>200%</span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>
+                <span class="label-text">
+                    <span class="material-symbols-rounded">palette</span>
+                    颜色选择
+                </span>
+                <span class="value-display"></span>
+            </label>
+            <div class="color-control">
+                <input type="color" id="colorPicker" value="#FFFFFF">
+                <button class="color-mode-btn" id="colorModeBtn">
+                    <span class="material-symbols-rounded">autorenew</span>
+                    切换模式
+                </button>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>
+                <span class="label-text">
+                    <span class="material-symbols-rounded">thermostat</span>
+                    色温控制
+                </span>
+                <span class="value-display"></span>
+            </label>
+            <input type="range" id="temperature" min="2000" max="6500" value="4000">
+            <div class="slider-ticks">
+                <span>暖色</span>
+                <span>自然</span>
+                <span>冷色</span>
+            </div>
+        </div>
+
+        <div class="presets-section">
+            <div class="section-header">
+                <h3>场景预设</h3>
+                <button class="breathing-toggle" id="breathingToggle">
+                    <span class="material-symbols-rounded">blur_on</span>
+                </button>
+            </div>
+            <div class="presets">
+                <button class="preset-btn" data-brightness="100" data-temp="6500">
+                    <span class="preset-icon">light_mode</span>
+                    <span class="preset-name">高光</span>
+                </button>
+                <button class="preset-btn" data-brightness="75" data-temp="5000">
+                    <span class="preset-icon">wb_sunny</span>
+                    <span class="preset-name">自然</span>
+                </button>
+                <button class="preset-btn" data-brightness="50" data-temp="3500">
+                    <span class="preset-icon">wb_twilight</span>
+                    <span class="preset-name">柔和</span>
+                </button>
+                <button class="preset-btn" data-brightness="25" data-temp="2700">
+                    <span class="preset-icon">bedtime</span>
+                    <span class="preset-name">暗调</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
